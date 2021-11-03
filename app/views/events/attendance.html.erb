@@ -1,0 +1,29 @@
+<h1>Attendance Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Player</td>
+      <td>Attendance</td>
+      <td>Excuse Note</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendancerecords.each do |attendancerecord| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= attendancerecord.type %></td>
+        <td><%= attendancerecord.note %></td>
+        <td><%= link_to 'Show', attendancerecord %></td>
+        <td><%= link_to 'Edit', edit_attendancerecord_path(attendancerecord) %></td>
+        <td><%= link_to 'Destroy', attendancerecord, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attendance Record', new_attendancerecord_path %>
+<%= link_to 'Back', events_path %>

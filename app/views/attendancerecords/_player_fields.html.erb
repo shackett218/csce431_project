@@ -1,0 +1,4 @@
+<div class="field">
+Player Name<br />
+<%= f.collection_select :player_id, Player.order(:name),:id,:name, include_blank: true %>
+</div>

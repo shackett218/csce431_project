@@ -1,0 +1,35 @@
+<u1>
+ <li class="navbarLink" id="link1"><%= link_to('Home', root_path) %></li>
+ <li class="navbarLink" id="link1"><%= link_to('Players', players_path) %></li>
+ <li class="navbarLink" id="link2"><%= link_to('Alumnis', alumnis_path	) %></li>
+ <li class="navbarLink" id="link2"><%= link_to('Recruits', recruits_path	) %></li>
+ <li class="navbarLink" id="link1"><%= link_to('Mechandise',merchandises_path)%></li>
+<li class="navbarLink" id="link1"><%= link_to('Transactions',transactions_path)%></li>
+<li class="navbarLink" id="link1"><%= link_to 'Events',events_path %></li>
+ <li class="navbarLink" id="link" style="float: right"><%= link_to('Sign Out', destroy_admin_session_path	) %></li>
+</u1>
+
+<center>
+<h1><%= @player.find(:name) %></h1>
+<h2>Attendance Records<h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event Type</th>
+      <th>Event Date</th>
+      <th>Attendance Type</th>
+      <th>Excuse Note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendancerecords.each do |record| %>
+    <tr>
+      <td><%=
+      <td><%= record.type %></td>
+      <td><%= record.note %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

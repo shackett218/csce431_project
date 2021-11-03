@@ -68,6 +68,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:uin, :name, :email, :phone_number, :address, :person_type, :dues, :status)
+      params.require(:player).permit(:uin, :name, :email, :phone_number, :address, :person_type, :dues, :status, :note, :type, :attendancerecord_id)
     end
 end
